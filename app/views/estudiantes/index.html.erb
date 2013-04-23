@@ -1,0 +1,68 @@
+<%- model_class = Estudiante -%>
+<div class="page-header">
+  <h1>Estudiantes</h1>
+</div>
+<%= form_tag request.path, :method => 'get' do %>
+ <%= content_tag :label do %>
+   Nombre Aprendiz:
+   <%= text_field_tag :search,params[:search]%>
+   <%= submit_tag "Consultar", :name => nil %>
+ <% end %>
+<% end %>
+
+<br>
+<div id="opag">
+   <%= form_tag request.path, :method => 'get' do %> 
+     <%= content_tag :label do %> 
+      Seleccione numero de registros por pagina:
+      <br>
+       <%= text_field_tag :limit, params[:limit] , :id=>'num'%> 
+       <%= submit_tag "Aceptar", :name => nil %> 
+     <% end %> 
+   <% end %>
+ </div>
+
+<br>
+<hr>
+<table class="table table-striped table-bordered table-condensed pretty">
+  <thead>
+    <tr>
+      <th><%= sortable "id" %></th>
+      <th><%= sortable "nombres" %></th>
+      <th><%= sortable "cedula" %></th>
+      <th><%= sortable "email" %></th>
+      <th><%= sortable "direccion" %></th>
+      <th><%= sortable "fch_nacimiento" %></th>
+      <th></th>
+      
+    </tr>
+  </thead>
+  <tbody>
+     <%= render @estudiantes %>
+  </tbody>
+  
+    
+</table>
+<tr>
+      <td><%= link_to 'Nuevo Estudiante', new_curso_estudiante_path, :remote => true, :class=> "btn btn-medium btn-danger" %> </td>
+      <td><%= link_to 'atras', cursos_path, :class=> "btn btn-medium btn-primary"%></td>
+    </tr>
+
+
+
+
+
+<br />
+<br />
+<div align="center">
+<%= will_paginate @estudiantes, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
+</div>
+<p>
+Total Aprendices : <%= @estudiantes.total_entries %>
+</p>
+
+
+ 
+
+
+            
