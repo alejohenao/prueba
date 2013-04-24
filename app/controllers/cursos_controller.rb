@@ -1,7 +1,6 @@
 class CursosController < ApplicationController
   helper_method :sort_column, :sort_direction
-  # GET /cursos
-  # GET /cursos.json
+ 
   def index
 
     if (params[:limit] == nil) or (params[:limit] <= '0') then
@@ -9,7 +8,7 @@ class CursosController < ApplicationController
    end  
     @cursos = Curso.order(sort_column + " " + sort_direction).search(params[:search]).page(params[:page]).per_page(params[:limit].to_i)
     respond_to do |format|
-    format.html # index.html.erb
+    format.html 
     format.xml { render :xml => @cursos }
     end
  end

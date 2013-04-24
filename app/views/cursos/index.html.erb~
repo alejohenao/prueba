@@ -44,7 +44,7 @@ Seleccione numero de registros por pagina:
 
 
 <tr>
-      <td><%= link_to 'Nuevo Curso', new_curso_path, :remote => true, :class=> "btn btn-medium btn-primary" %> </td>
+      <td><%= link_to 'Nuevo Curso', new_curso_path, :remote => true, :class=> "btn btn-medium btn-danger" %> </td>
       
 </tr>
 

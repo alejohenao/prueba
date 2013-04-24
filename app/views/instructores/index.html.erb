@@ -7,7 +7,7 @@
 
 Nombre instructor:
 <%= text_field_tag :search, params[:search] %>
-<%= submit_tag "Consultar", :name => nil %>
+<%= submit_tag "Consultar", :name => nil, :class => 'btn-success'  %>
 <% end %>
 <% end %>
 <br />
@@ -17,6 +17,7 @@ Nombre instructor:
 Seleccione numero de registros por pagina:
 <br>
 <%= text_field_tag :limit, params[:limit] , :id=>'num'%> 
+<%= submit_tag "Aceptar", :name => nil, :class => 'btn-success' %> 
  
 <% end %> 
 <% end %>
@@ -46,7 +47,7 @@ Seleccione numero de registros por pagina:
   </tbody>
   <tfoot>
     <tr>
-      <td><%= link_to 'Nuevo Instructor', new_instructor_path, :remote => true, :class=> "btn btn-medium btn-danger" %></td>
+      <td><%= link_to 'Nuevo Instructor', new_instructor_path, :remote => true, :class=> "btn btn-medium btn-primary" %></td>
     </tr>
   </tfoot>
 </table>

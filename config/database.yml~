@@ -45,7 +45,7 @@ test:
   database: prueba_test
   pool: 5
   username: postgres
-  password: 4ds12012
+  password: postgres
   host: localhost
   port: 5432
 

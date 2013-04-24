@@ -6,7 +6,7 @@
 <%= content_tag :label do %>
 Nombre de materia:
 <%= text_field_tag :search, params[:search] %>
-<%= submit_tag "Consultar", :name => nil %>
+<%= submit_tag "Consultar", :name => nil, :class => 'btn-success' %>
 <% end %>
 <% end %>
 <br/>
@@ -17,7 +17,7 @@ Nombre de materia:
 Seleccione numero de registros por pagina:
 <br>
 <%= text_field_tag :limit, params[:limit] , :id=>'num'%> 
-<%= submit_tag "Aceptar", :name => nil %> 
+<%= submit_tag "Aceptar", :name => nil, :class => 'btn-success' %> 
 <% end %> 
 <% end %>
 </div>
@@ -38,13 +38,9 @@ Seleccione numero de registros por pagina:
   <tbody>
      <%= render @materias %>
   </tbody>
-  <tfoot>
-    <tr>
-      <td><%= link_to 'Nueva materia', new_materia_path, :remote => true, :class=> "btn btn-medium btn-danger" %></td>
-    </tr>
-  </tfoot>
-</table>
 
+</table>
+<%= link_to 'Nueva materia', new_materia_path, :remote => true, :class=> "btn btn-medium btn-primary" %>
 <br />
 <br />
 <div align="center">

@@ -5,12 +5,12 @@
   <td><%= curso.nombre%></td>
   <td><%= curso.created_at %></td>
   <td>
-  <%= link_to 'Mostrar', curso, :remote => true, :class => 'btn btn-mini' %>
+  <%= link_to 'Mostrar', curso, :remote => true, :class => 'btn btn-mini btn-success' %>
     <%= link_to 'Editar', edit_curso_path(curso), :remote => true,
-        :class => 'btn btn-mini' %>
+        :class => 'btn btn-mini btn-success' %>
     <%= link_to 'Eliminar', curso, 
         :data => { :confirm => 'Esta Seguro?' },
         :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
-    <%= link_to 'Lista de estudiantes', curso_estudiantes_path(curso), :class => 'btn btn-primary btn-medium' %>
+    <%= link_to 'Lista de estudiantes', curso_estudiantes_path(curso), :class => 'btn btn-success btn-medium' %>
   </td>
 </tr>

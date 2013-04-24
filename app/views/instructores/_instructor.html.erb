@@ -11,7 +11,7 @@
   <td>
     <%= link_to 'Mostrar', instructor, :remote => true, :class => 'btn btn-success btn-mini' %>
     <%= link_to 'Editar', edit_instructor_path(instructor), :remote => true,
-        :class => 'btn btn-mini' %>
+        :class => 'btn btn-mini btn-success' %>
     <%= link_to 'Eliminar', instructor, 
         :data => { :confirm => 'Esta Seguro?' },
         :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>

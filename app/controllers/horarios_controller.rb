@@ -1,7 +1,6 @@
 class HorariosController < ApplicationController
   helper_method :sort_column, :sort_direction
-  # GET /horarios
-  # GET /horarios.json
+
   def index
 
    if (params[:limit] == nil) or (params[:limit] <= '0') then
@@ -10,16 +9,14 @@ class HorariosController < ApplicationController
 
     @horarios= Horario.order(sort_column + " " + sort_direction).search(params[:search]).page(params[:page]).per_page(params[:limit].to_i)
     respond_to do |format|
-    format.html # index.html.erb
+    format.html 
     format.xml { render :xml => @horarios }
      end
  end
 
   
   def show
-      #@horario = Horario.find(params[:id])
-       #pdf = Prawn::Document.new
-       #send_data pdf.render, :filename => "Horarios de aprendizes", :type => "application/pdf"
+   
       @horario = Horario.find(params[:id])
     
     respond_to do |format|

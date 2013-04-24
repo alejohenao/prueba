@@ -6,7 +6,7 @@
  <%= content_tag :label do %>
    Nombre Aprendiz:
    <%= text_field_tag :search,params[:search]%>
-   <%= submit_tag "Consultar", :name => nil %>
+   <%= submit_tag "Consultar", :name => nil, :class => 'btn-success' %>
  <% end %>
 <% end %>
 
@@ -17,7 +17,7 @@
       Seleccione numero de registros por pagina:
       <br>
        <%= text_field_tag :limit, params[:limit] , :id=>'num'%> 
-       <%= submit_tag "Aceptar", :name => nil %> 
+       <%= submit_tag "Aceptar", :name => nil, :class => 'btn-success' %> 
      <% end %> 
    <% end %>
  </div>
@@ -44,7 +44,7 @@
     
 </table>
 <tr>
-      <td><%= link_to 'Nuevo Estudiante', new_curso_estudiante_path, :remote => true, :class=> "btn btn-medium btn-danger" %> </td>
+      <td><%= link_to 'Nuevo Estudiante', new_curso_estudiante_path, :remote => true, :class=> "btn btn-medium btn-primary" %> </td>
       <td><%= link_to 'atras', cursos_path, :class=> "btn btn-medium btn-primary"%></td>
     </tr>
 
